@@ -1,0 +1,15 @@
+{
+  "title": "Web Inspect",
+  "url": "http://webinspect.tech",
+  "feed": {
+    "subtitle": "Stuff and nonsense",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "http://webinspect.tech/feed/feed.xml",
+    "id": "http://webinspect.tech"
+  },
+  "author": {
+    "name": "Timothy Miller",
+    "email": "tim@webinspect.tech"
+  }
+}

@@ -1,0 +1,40 @@
+:root {
+	--blue: #309A89;
+	--dark-blue: #1e6055;
+	--font-family: 'Raleway';
+}
+
+html, body {
+	font-family: var(--font-family);
+	margin: 0;
+}
+
+.site-header {
+	border-bottom: 1px solid slategray;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 16px;
+}
+
+.site-nav__ul {
+	display: flex;
+}
+
+.site-title {
+	color: var(--blue);
+	font-size: 1.5em;
+	vertical-align: middle;
+	text-decoration: none;
+	transition: color 100ms linear;
+}
+.site-title:hover {
+	color: var(--dark-blue);
+}
+
+.logomark {
+	vertical-align: bottom;
+}
+.bubble {
+	stroke: currentColor;
+}
