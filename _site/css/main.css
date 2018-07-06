@@ -176,10 +176,39 @@ input[type="text"] {
 
 .logos--inner {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 .logos--inner img {
-	
+	margin: 20px;
+}
+
+/**************************
+* services
+***************************/
+
+.services {
+	padding: 64px 16px;
+}
+
+.services__header {
+	color: var(--blue);
+	text-align: center;
+	font-size: 2em;
+}
+
+.split {
+	display: flex;
+}
+
+.split-section {
+	flex: 1;
+	margin: 16px;
+}
+
+.split__header {
+	/*text-align: center;*/
+	font-size: 1.2em;
 }
