@@ -2,12 +2,44 @@
 	--blue: #309A89;
 	--dark-blue: #1e6055;
 	--font-family: 'Raleway';
+
+	--site-max-width: 1200px;
 }
+
+/***************************
+* base styles
+***************************/
 
 html, body {
 	font-family: var(--font-family);
 	margin: 0;
+	box-sizing: border-box;
 }
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.inner {
+	max-width: var(--site-max-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.picture-frame {
+	border: 12px solid var(--blue);
+	line-height: 0;
+}
+
+input[type="text"] {
+	width: 100%;
+	font-size: 1.2em;
+	padding: 8px 16px;
+}
+
+/***************************
+* header and navigation
+***************************/
 
 .site-header {
 	border-bottom: 1px solid slategray;
@@ -37,4 +69,117 @@ html, body {
 }
 .bubble {
 	stroke: currentColor;
+}
+
+
+/***************************
+* top-section
+***************************/
+
+.top-section {
+	font-size: 3.3rem;
+	color: var(--blue);
+	text-align: left;
+}
+.top-section h2 {
+	/* maybe? maybe not */
+	font-weight: 900;
+}
+
+/***************************
+* banner
+***************************/
+
+.banner {
+	background: var(--blue);
+	color: white;
+	padding: 16px 48px;
+}
+
+.banner__header {
+	font-size: 2em;
+}
+
+.banner--inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-flow: column nowrap;
+}
+
+.banner__form {
+	display: flex;
+	flex-flow: column nowrap;
+	max-width: 320px;
+	width: 100%;
+	margin-left: 12px;
+}
+
+@media (min-width: 800px) {
+	.banner--inner {
+		flex-flow: row nowrap;
+	}
+}
+
+
+/**************************
+* bio
+***************************/
+
+.bio {
+	padding: 84px 16px;
+}
+
+.bio--inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-flow: column nowrap;
+}
+
+.bio-left {
+	margin-bottom: 32px;
+}
+
+.bio-left p {
+	font-size: 1.3em;
+	line-height: 1.6;
+	max-width: 30em;
+	margin: 0;
+	text-indent: 1em;
+}
+
+@media (min-width: 800px) {
+	.bio--inner {
+		flex-flow: row nowrap;
+	}
+	.bio-left {
+		margin-right: 32px;
+	}
+}
+
+/**************************
+* logos
+***************************/
+
+.banner__logos {
+	padding: 48px 16px;
+}
+
+.logos__header {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 100;
+	text-align: center;
+	opacity: 0.5;
+}
+
+.logos--inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logos--inner img {
+	
 }
