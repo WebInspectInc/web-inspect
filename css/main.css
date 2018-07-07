@@ -1,7 +1,6 @@
 :root {
 	--blue: #309A89;
 	--dark-blue: #1e6055;
-	--font-family: 'Raleway';
 
 	--site-max-width: 1200px;
 }
@@ -11,7 +10,7 @@
 ***************************/
 
 html, body {
-	font-family: var(--font-family);
+	font-family: 'Raleway', sans-serif;
 	margin: 0;
 	box-sizing: border-box;
 }
@@ -57,7 +56,7 @@ input[type="text"], textarea {
 }
 
 textarea {
-	font-family: var(--font-family);
+	font-family: 'Raleway', sans-serif;
 	font-size: 1em;
 	width: 100%;
 	resize: none;
