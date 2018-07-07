@@ -2,7 +2,7 @@
   "title": "Web Inspect",
   "url": "http://webinspect.tech",
   "feed": {
-    "subtitle": "Stuff and nonsense",
+    "subtitle": "Web Inspect",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "http://webinspect.tech/feed/feed.xml",

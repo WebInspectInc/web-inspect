@@ -20,6 +20,22 @@ html, body {
 	box-sizing: inherit;
 }
 
+a:link, a:visited {
+	color: var(--blue);
+	text-decoration: none;
+	box-shadow: 
+		0 -2px 0 rgba(42, 143, 126, 0.3) inset,
+		0 -1px 0 rgba(42, 143, 126, 0.3) inset;
+}
+
+.link__white:link, .link__white:visited {
+	color: white;
+	box-shadow: 
+		0 -4px 0 rgba(255,255,255,0.33) inset,
+		0 -2px 0 rgba(255,255,255,0.33) inset,
+		0 -1px 0 rgba(255,255,255,0.33) inset;
+}
+
 .inner {
 	max-width: var(--site-max-width);
 	margin-left: auto;
@@ -53,12 +69,13 @@ input[type="text"] {
 	display: flex;
 }
 
-.site-title {
+.site-title:link, .site-title:visited {
 	color: var(--blue);
 	font-size: 1.5em;
 	vertical-align: middle;
 	text-decoration: none;
 	transition: color 100ms linear;
+	box-shadow: none;
 }
 .site-title:hover {
 	color: var(--dark-blue);
@@ -69,6 +86,17 @@ input[type="text"] {
 }
 .bubble {
 	stroke: currentColor;
+}
+
+/**************************
+* .site-footer
+***************************/
+
+.site-footer {
+	background: var(--dark-blue);
+	color: white;
+	padding: 32px 16px;
+	text-align: center;
 }
 
 
@@ -181,6 +209,10 @@ input[type="text"] {
 	flex-flow: row wrap;
 }
 
+.logo-links:link, .logo-links:visited {
+	box-shadow: none;
+}
+
 .logos--inner img {
 	margin: 20px;
 }
@@ -211,4 +243,26 @@ input[type="text"] {
 .split__header {
 	/*text-align: center;*/
 	font-size: 1.2em;
+}
+
+/**************************
+* quotes
+***************************/
+
+.quotes {
+	background: #eee;
+	color: #333;
+	padding: 64px 16px;
+}
+
+.recommendation {
+	font-size: 2em;
+	max-width: 30em;
+	margin: 0 auto;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.recommendation__attribution {
+	/*color: white;*/
 }
