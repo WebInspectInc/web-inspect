@@ -194,11 +194,11 @@ button {
 .banner {
 	background: var(--blue);
 	color: white;
-	padding: 48px 16px;
+	padding: 32px 16px;
 }
 
 .banner__header {
-	font-size: 2em;
+	font-size: 1.7em;
 }
 
 .banner__subtext {
@@ -218,15 +218,21 @@ button {
 	flex-flow: column nowrap;
 	max-width: 320px;
 	width: 100%;
-	margin-left: 12px;
 }
 
 @media (min-width: 800px) {
 	.banner {
-		padding: 16px 56px;
+		padding: 16px 0;
+	}
+	.banner__header {
+		font-size: 2em;
 	}
 	.banner--inner {
 		flex-flow: row nowrap;
+		padding: 0 28px;
+	}
+	.banner__form {
+		margin-left: 12px;
 	}
 }
 
@@ -364,7 +370,8 @@ button {
 .services__header {
 	color: var(--blue);
 	font-size: 2em;
-	margin-bottom: 0;
+	margin: 0 auto;
+	max-width: 400px;
 }
 
 .split {
@@ -374,7 +381,8 @@ button {
 
 .split-section {
 	flex: 1;
-	margin: 8px 0;
+	margin: 8px auto;
+	max-width: 400px;
 }
 
 .split__header {
