@@ -47,11 +47,41 @@ a:link, a:visited {
 	line-height: 0;
 }
 
-input[type="text"] {
+input[type="text"], textarea {
 	width: 100%;
 	font-size: 1.2em;
 	padding: 8px 16px;
+	background: var(--blue);
+	border: 4px solid var(--dark-blue);
+	color: white;
 }
+
+textarea {
+	font-family: var(--font-family);
+	font-size: 1em;
+	width: 100%;
+	resize: none;
+	line-height: 1.5;
+	height: 4em;
+}
+
+button {
+	cursor: pointer;
+}
+
+
+.icon {
+	fill: var(--blue);
+	height: 100%;
+	width: 100%;
+	pointer-events: none;
+}
+
+.blue-text {
+	color: var(--blue);
+	font-weight: 900;
+}
+
 
 /***************************
 * header and navigation
@@ -59,19 +89,23 @@ input[type="text"] {
 
 .site-header {
 	border-bottom: 1px solid slategray;
+}
+
+.site-header__inner {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	padding: 0 16px;
 }
 
 .site-nav__ul {
 	display: flex;
+	display: none;
 }
 
 .site-title:link, .site-title:visited {
 	color: var(--blue);
-	font-size: 1.5em;
+	font-size: 1em;
 	vertical-align: middle;
 	text-decoration: none;
 	transition: color 100ms linear;
@@ -83,9 +117,22 @@ input[type="text"] {
 
 .logomark {
 	vertical-align: bottom;
+	height: 36px;
 }
 .bubble {
 	stroke: currentColor;
+}
+
+@media (min-width: 500px) {
+	.site-header__inner {
+		justify-content: space-between;
+	}
+	.logomark {
+		height: 56px;
+	}
+	.site-title:link, .site-title:visited {
+		font-size: 1.5em;
+	}
 }
 
 /**************************
@@ -99,19 +146,45 @@ input[type="text"] {
 	text-align: center;
 }
 
+.site-footer__inner {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: column nowrap;
+}
+
+@media (min-width: 800px) {
+	.site-footer__inner {
+		flex-flow: row nowrap;
+	}
+}
+
 
 /***************************
 * top-section
 ***************************/
 
 .top-section {
-	font-size: 3.3rem;
+	font-size: 1.2rem;
+	padding: 32px 12px;
 	color: var(--blue);
-	text-align: left;
+	text-align: center;
 }
 .top-section h2 {
 	/* maybe? maybe not */
 	font-weight: 900;
+}
+
+@media (min-width: 500px) {
+	.top-section {
+		padding: 48px 24px;
+		font-size: 2rem;
+		text-align: left;
+	}
+}
+@media (min-width: 1100px) {
+	.top-section {
+		font-size: 3.65rem;
+	}
 }
 
 /***************************
@@ -121,11 +194,16 @@ input[type="text"] {
 .banner {
 	background: var(--blue);
 	color: white;
-	padding: 16px 48px;
+	padding: 48px 16px;
 }
 
 .banner__header {
 	font-size: 2em;
+}
+
+.banner__subtext {
+	color: var(--dark-blue);
+	margin-top: 0;
 }
 
 .banner--inner {
@@ -144,9 +222,50 @@ input[type="text"] {
 }
 
 @media (min-width: 800px) {
+	.banner {
+		padding: 16px 56px;
+	}
 	.banner--inner {
 		flex-flow: row nowrap;
 	}
+}
+
+/***************************
+* special inline form
+***************************/
+
+.inputs {
+	position: relative;
+	min-height: 80px;
+}
+
+.step {
+	transition: opacity 100ms linear, transform 100ms linear;
+	border-radius: 4px;
+	padding-right: 48px;
+}
+
+.hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transform: translateY(100%);
+}
+
+
+
+.form-next {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 8px;
+	height: 48px;
+	width: 60px;
+	background: var(--dark-blue);
+	border: none;
+	z-index: 10;
+	border-bottom-left-radius: 50%;
 }
 
 
@@ -155,7 +274,13 @@ input[type="text"] {
 ***************************/
 
 .bio {
-	padding: 84px 16px;
+	padding: 48px 16px;
+}
+
+.bio img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
 }
 
 .bio--inner {
@@ -166,23 +291,31 @@ input[type="text"] {
 }
 
 .bio-left {
-	margin-bottom: 32px;
+	order: 1;
 }
 
 .bio-left p {
-	font-size: 1.3em;
 	line-height: 1.6;
-	max-width: 30em;
-	margin: 0;
-	text-indent: 1em;
+	max-width: 24em;
 }
 
 @media (min-width: 800px) {
+	.bio {
+		padding: 84px 16px;
+	}
 	.bio--inner {
 		flex-flow: row nowrap;
 	}
 	.bio-left {
+		order: -1;
+		margin-bottom: 32px;
 		margin-right: 32px;
+	}
+	.bio-left p {
+		font-size: 1.3em;
+		max-width: 30em;
+		margin: 0;
+		text-indent: 1em;
 	}
 }
 
@@ -211,10 +344,12 @@ input[type="text"] {
 
 .logo-links:link, .logo-links:visited {
 	box-shadow: none;
+	margin: 20px;
 }
 
 .logos--inner img {
-	margin: 20px;
+	max-width: 100%;
+	height: auto;
 }
 
 /**************************
@@ -223,26 +358,39 @@ input[type="text"] {
 
 .services {
 	padding: 64px 16px;
+	text-align: left;
 }
 
 .services__header {
 	color: var(--blue);
-	text-align: center;
 	font-size: 2em;
+	margin-bottom: 0;
 }
 
 .split {
 	display: flex;
+	flex-flow: column nowrap;
 }
 
 .split-section {
 	flex: 1;
-	margin: 16px;
+	margin: 8px 0;
 }
 
 .split__header {
-	/*text-align: center;*/
 	font-size: 1.2em;
+}
+
+@media (min-width: 800px) {
+	.services {
+		text-align: center;
+	}
+	.split {
+		flex-flow: row nowrap;
+	}
+	.split-section {
+		margin: 16px;
+	}
 }
 
 /**************************
@@ -256,7 +404,7 @@ input[type="text"] {
 }
 
 .recommendation {
-	font-size: 2em;
+	font-size: 1em;
 	max-width: 30em;
 	margin: 0 auto;
 	line-height: 1.6;
@@ -265,4 +413,10 @@ input[type="text"] {
 
 .recommendation__attribution {
 	/*color: white;*/
+}
+
+@media (min-width: 800px) {
+	.recommendation {
+		font-size: 2em;
+	}
 }
